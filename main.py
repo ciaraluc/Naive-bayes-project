@@ -1,7 +1,7 @@
 import math, os, pickle, re
 from turtle import pos 
 from typing import Tuple, List, Dict
-
+  
 class BayesClassifier:
     """A simple BayesClassifier implementation
 
