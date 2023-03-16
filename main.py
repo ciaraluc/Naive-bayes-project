@@ -23,11 +23,11 @@ class BayesClassifier:
         # initialize attributes
         self.pos_freqs: Dict[str, int] = {}
         self.neg_freqs: Dict[str, int] = {}
-        self.pos_filename: str = "pos.dat"
-        self.neg_filename: str = "neg.dat"
-        self.training_data_directory: str = "apple_iphone_11_reviews.csv"
-        self.neg_file_prefix: str = "movies-1"
-        self.pos_file_prefix: str = "movies-5"
+        self.pos_filename: str = "posreviews.csv"
+        self.neg_filename: str = "negreviews.csv"
+        #self.training_data_directory: str = "apple_iphone_11_reviews.csv"
+        #self.neg_file_prefix: str = "movies-1"
+        #self.pos_file_prefix: str = "movies-5"
 
         # check if both cached classifiers exist within the current directory
         if os.path.isfile(self.pos_filename) and os.path.isfile(self.neg_filename):
