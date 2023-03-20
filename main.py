@@ -23,11 +23,9 @@ class BayesClassifier:
         # initialize attributes
         self.pos_freqs: Dict[str, int] = {}
         self.neg_freqs: Dict[str, int] = {}
-        self.pos_filename: str = "posreviews.csv"
-        self.neg_filename: str = "negreviews.csv"
-        #self.training_data_directory: str = "apple_iphone_11_reviews.csv"
-        #self.neg_file_prefix: str = "movies-1"
-        #self.pos_file_prefix: str = "movies-5"
+        self.pos_filename: str = "posreviews.dat"
+        self.neg_filename: str = "negreviews.dat"
+        self.training_data_directory: str = "apple_iphone_11_reviews.csv"
 
         # check if both cached classifiers exist within the current directory
         if os.path.isfile(self.pos_filename) and os.path.isfile(self.neg_filename):
@@ -102,9 +100,9 @@ class BayesClassifier:
         # tokens from the file and the appropriate dictionary
             token=self.tokenize(text)
             
-            if filename.startswith(self.pos_file_prefix):
+            if filename.startswith(self.posreviews):
                 self.update_dict(token, self.pos_freqs)
-            elif filename.startswith(self.neg_file_prefix):
+            elif filename.startswith(self.negreviews):
                 self.update_dict(token,self.neg_freqs)
         
         print(self.pos_freqs)
@@ -279,3 +277,4 @@ class BayesClassifier:
 if __name__ == "__main__":
     # uncomment the below lines once you've implemented `train` & `classify`
     b = BayesClassifier()
+    pass
